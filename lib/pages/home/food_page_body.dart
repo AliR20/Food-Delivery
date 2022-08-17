@@ -17,8 +17,8 @@ class FoodPageBody extends StatefulWidget {
 class _FoodPageBodyState extends State<FoodPageBody> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currPageValue = 0.0;
-  double _scaleFactor = 0.8;
-  double _height = Dimensions.pageViewContainer;
+  final double _scaleFactor = 0.8;
+  final double _height = Dimensions.pageViewContainer;
   @override
   void initState() {
     super.initState();
@@ -40,7 +40,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     return Column(
       children: [
         //slider section
-        Container(
+        SizedBox(
           height: Dimensions.pageView,
           child: PageView.builder(
               controller: pageController,
@@ -54,8 +54,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           dotsCount: 5,
           position: _currPageValue,
           decorator: DotsDecorator(
-              size: Size.square(9.0),
-              activeSize: Size(18.0, 9.0),
+              size: const Size.square(9.0),
+              activeSize: const Size(18.0, 9.0),
               activeColor: AppColors.mainColor,
               activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0),
@@ -72,20 +72,20 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BigText(text: 'Popular'),
+              const BigText(text: 'Popular'),
               SizedBox(
                 width: Dimensions.width10,
               ),
               Container(
-                margin: EdgeInsets.only(bottom: 3),
-                child: BigText(text: '.', color: Colors.black26),
+                margin: const EdgeInsets.only(bottom: 3),
+                child: const BigText(text: '.', color: Colors.black26),
               ),
               SizedBox(
                 width: Dimensions.width10,
               ),
               Container(
-                margin: EdgeInsets.only(bottom: 2),
-                child: SmallText(text: 'Food pairing'),
+                margin: const EdgeInsets.only(bottom: 2),
+                child: const SmallText(text: 'Food pairing'),
               )
             ],
           ),
@@ -93,7 +93,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         //List of food and images
         ListView.builder(
             shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             itemCount: 10,
             itemBuilder: (context, index) {
               return Container(
@@ -111,7 +111,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           borderRadius:
                               BorderRadius.circular(Dimensions.radius20),
                           color: Colors.white38,
-                          image: DecorationImage(
+                          image: const DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage('assets/image/food0.png'))),
                     ),
@@ -132,13 +132,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              BigText(text: 'Nutritious fruit meal in China'),
+                              const BigText(text: 'Nutritious fruit meal in China'),
                               SizedBox(height: Dimensions.height10,),
-                              SmallText(text: 'With chinese characteristics'),
+                              const SmallText(text: 'With chinese characteristics'),
                               SizedBox(height: Dimensions.height10,),
                                  Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         IconAndTextWidget(
                             icon: Icons.circle_sharp,
                             text: 'Normal',
@@ -203,8 +203,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             ),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
-                color: index.isEven ? Color(0xFF69c5df) : Color(0xFF9294cc),
-                image: DecorationImage(
+                color: index.isEven ? const Color(0xFF69c5df) : const Color(0xFF9294cc),
+                image: const DecorationImage(
                     image: AssetImage('assets/image/food0.png'),
                     fit: BoxFit.cover)),
           ),
@@ -219,7 +219,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Color(0xFFe8e8e8),
                     blurRadius: 5.0,
@@ -241,7 +241,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   right: Dimensions.width15,
                   left: Dimensions.width15,
                 ),
-                child: AppColumn(text: 'Chinese Side',),
+                child: const AppColumn(text: 'Chinese Side',),
               ),
             ),
           ),

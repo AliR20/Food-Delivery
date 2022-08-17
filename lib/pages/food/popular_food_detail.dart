@@ -1,6 +1,7 @@
 import 'package:e_commerce_model/utils/dimensions.dart';
 import 'package:e_commerce_model/widgets/app_column.dart';
 import 'package:e_commerce_model/widgets/app_icon.dart';
+import 'package:e_commerce_model/widgets/expandable_text_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/colors.dart';
@@ -14,25 +15,27 @@ class PopularFoodDetail extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(children: [
+        //background image
         Positioned(
           right: 0,
           left: 0,
           child: Container(
             width: double.maxFinite,
             height: Dimensions.popularFoodImgSize,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage('assets/image/food0.png'))),
           ),
         ),
+        //icon widgets
         Positioned(
           left: Dimensions.width20,
           top: Dimensions.height45,
           right: Dimensions.width20,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               AppIcon(
                 icon: Icons.arrow_back_ios,
               ),
@@ -42,6 +45,7 @@ class PopularFoodDetail extends StatelessWidget {
             ],
           ),
         ),
+        // introduction of food
         Positioned(
           left: 0,
           right: 0,
@@ -63,11 +67,22 @@ class PopularFoodDetail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppColumn(text: 'Chinese Side'),
+                const AppColumn(text: 'Chinese Side'),
                 SizedBox(
                   height: Dimensions.height20,
                 ),
-                BigText(text: 'Introduce')
+                const BigText(text: 'Introduce'),
+                 SizedBox(
+                  height: Dimensions.height20,
+                ),
+                const Expanded(
+                  child: SingleChildScrollView(
+                    child: ExpandableTextWidget(
+                      text:
+                          'kejfkassfkaskfmkamsfkmaskmdkasmkfmaskmkmkmzxkcmzkcmc,xzmc,maskmdlsmodwkqoffjowqjfkwqkfoqkofqkofq',
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -96,7 +111,7 @@ class PopularFoodDetail extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(
                 top: Dimensions.height20,
-                bottom: Dimensions.height20,
+                bottom: Dimensions.height10,
                 right: Dimensions.width20,
                 left: Dimensions.width20,
               ),
@@ -107,18 +122,18 @@ class PopularFoodDetail extends StatelessWidget {
                   color: Colors.white),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.remove,
                     color: AppColors.signColor,
                   ),
                   SizedBox(
                     width: Dimensions.width10 / 2,
                   ),
-                  BigText(text: '0'),
+                  const BigText(text: '0'),
                   SizedBox(
                     width: Dimensions.width10 / 2,
                   ),
-                  Icon(
+                  const Icon(
                     Icons.add,
                     color: AppColors.signColor,
                   ),
@@ -126,17 +141,20 @@ class PopularFoodDetail extends StatelessWidget {
               ),
             ),
             Container(
-              padding:  EdgeInsets.only(
-                top: Dimensions.height20,
-                bottom: Dimensions.height20,
+              padding: EdgeInsets.only(
+                top: Dimensions.height15,
+                bottom: Dimensions.height15,
                 right: Dimensions.width20,
                 left: Dimensions.width20,
-              ) ,
+              ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(Dimensions.radius20),
                 color: AppColors.mainColor,
               ),
-              child: BigText(text: '\$10 | Add to cart ',color: Colors.white,),
+              child: const BigText(
+                text: '\$10 | Add to cart ',
+                color: Colors.white,
+              ),
             ),
           ],
         ),

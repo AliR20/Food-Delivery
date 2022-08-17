@@ -32,9 +32,9 @@ class _MainFoodPageState extends State<MainFoodPage> {
               children: [
                 Column(
                   children: [
-                    BigText(text: 'Bangladesh',color: AppColors.mainColor,),
+                    const BigText(text: 'Bangladesh',color: AppColors.mainColor,),
                     Row(
-                      children: [
+                      children: const [
                         SmallText(text: 'Narsingdi',color: Colors.black54,),
                         Icon(Icons.arrow_drop_down_rounded),
                       ],
@@ -59,7 +59,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
           //Showing the body
-          Expanded(child: SingleChildScrollView(child: FoodPageBody())),
+          const Expanded(child: SingleChildScrollView(child: FoodPageBody())),
         ],
       ),
     );

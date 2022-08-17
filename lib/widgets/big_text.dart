@@ -1,16 +1,15 @@
 
 
-import 'package:e_commerce_model/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 
 
 class BigText extends StatelessWidget {
   final String text;
-  double size;
-  Color? color;
+  final double size;
+  final Color? color;
   final TextOverflow overflow;
 
- BigText({
+ const BigText({
     Key? key,
     required this.text,
     this.color = const Color(0xFF332d2b),

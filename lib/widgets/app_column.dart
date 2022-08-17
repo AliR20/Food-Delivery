@@ -24,23 +24,23 @@ class AppColumn extends StatelessWidget {
                         Wrap(
                           children: List.generate(
                               5,
-                              (index) => Icon(
+                              (index) => const Icon(
                                     Icons.star,
                                     color: AppColors.mainColor,
                                   )),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        SmallText(text: '4.5'),
-                        SizedBox(
+                        const SmallText(text: '4.5'),
+                        const SizedBox(
                           width: 10,
                         ),
-                        SmallText(text: '1287'),
-                        SizedBox(
+                        const SmallText(text: '1287'),
+                        const SizedBox(
                           width: 10,
                         ),
-                        SmallText(text: 'comments'),
+                        const SmallText(text: 'comments'),
                       ],
                     ),
                     SizedBox(
@@ -48,7 +48,7 @@ class AppColumn extends StatelessWidget {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         IconAndTextWidget(
                             icon: Icons.circle_sharp,
                             text: 'Normal',
